@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String1", "String1\String1.vcxproj", "{0B38B03F-0B4E-4E57-A848-C3142858A0DC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MATRIX", "MATRIX\MATRIX.vcxproj", "{B7CDF915-386E-4991-9FCE-3EBEB276AE31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{0B38B03F-0B4E-4E57-A848-C3142858A0DC}.Release|x64.Build.0 = Release|x64
 		{0B38B03F-0B4E-4E57-A848-C3142858A0DC}.Release|x86.ActiveCfg = Release|Win32
 		{0B38B03F-0B4E-4E57-A848-C3142858A0DC}.Release|x86.Build.0 = Release|Win32
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Debug|x64.ActiveCfg = Debug|x64
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Debug|x64.Build.0 = Debug|x64
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Debug|x86.ActiveCfg = Debug|Win32
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Debug|x86.Build.0 = Debug|Win32
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Release|x64.ActiveCfg = Release|x64
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Release|x64.Build.0 = Release|x64
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Release|x86.ActiveCfg = Release|Win32
+		{B7CDF915-386E-4991-9FCE-3EBEB276AE31}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

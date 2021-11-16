@@ -62,11 +62,6 @@ public:
 		//Memory leak
 	}
 
-	void print()const
-	{
-		cout << "Size:\t" << size << endl;
-		cout << "Str:\t" << str << endl;
-	}
 
 	//                          OPERATORS:
 	String& operator =(const String& other)
@@ -99,6 +94,12 @@ public:
 	}char& operator[](int i)
 	{
 		return str[i];
+	}
+
+	void print()const
+	{
+		cout << "Size:\t" << size << endl;
+		cout << "Str:\t" << str << endl;
 	}
 };
 
