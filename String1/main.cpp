@@ -1,4 +1,5 @@
-﻿#pragma warning (disable:4326)
+﻿//constructors_delegation_in_string
+#pragma warning (disable:4326)
 #include <iostream>
 using namespace std;
 
@@ -25,35 +26,27 @@ public:
 		return str;
 	}
 	//                         CONSTRUCTORS:
-	String(int size = 80)
+	explicit String(int size = 80) :size(size), str(new char[size] {})
 	{
-		this->size = size;
-		this->str = new char[size] {};
 		cout << "Default_Constructor:\t" << this << endl;
 	}
-	String(const char* str)
+	String(const char* str) :size(strlen(str) + 1), str(new char[size] {})
 	{
-		this->size = strlen(str) + 1;
-		this->str = new char[size] {};
 		for (int i = 0; i < size; i++)this->str[i] = str[i];
 		cout << "Constructor:\t\t" << this << endl;
 	}
 	//                         THE RULE OF THREE:
-	String(const String& other)
+	String(const String& other) :size(other.size), str(new char[size] {})
 	{
 		//Deep copy
-		this->size = other.size;
-		this->str = new char[size] {};
 		for (int i = 0; i < size; i++)this->str[i] = other.str[i];
 		cout << "Copy_Constructor:\t" << this << endl;
 	}
-	String(String&& other)
+	String(String&& other):size(other.size), str(other.str)
 	{
-		this->size = other.size;
-		this->str = other.str;
-		cout << "Move_Constructor:\t" << this << endl;
 		other.str = nullptr;
 		other.size = 0;
+		cout << "Move_Constructor:\t" << this << endl;
 	}
 	~String()
 	{
@@ -104,7 +97,7 @@ public:
 
 String operator+(const String& left, const String& right)
 {
-	String buffer = left.get_size() + right.get_size() - 1;
+	String buffer (left.get_size() + right.get_size() - 1);
 	for (int i = 0; i < left.get_size(); i++)
 		//buffer.get_str()[i] = left.get_str()[i];
 		buffer[i] = left[i];
@@ -122,6 +115,7 @@ ostream& operator<<(ostream& os, const String& obj)
 }
 
 //#define CONSTRUCTORS_CHECK
+//#define OPERATOR_PLUS_CHEK
 
 void main()
 {
@@ -134,20 +128,19 @@ void main()
 	String str1 = "Hello"; //Single-argument constructor
 	//str1.print();
 	cout << str1 << endl;
-	String str2 = "World";
+
+	String str2 = str1; //Copy constructor
 	cout << str2 << endl;
 
-	//String str2 = str1; //Copy constructor
-	//cout << str2 << endl;
-
 	String str3;
-	str3 = str2; //Shallow copy (ïîâðåõíîñòíîå êîïèðîâàíèå)
+	str3 = str2; //Shallow copy (поверхностное копирование)
 	cout << str3 << endl;
 #endif // CONSTRUCTORS_CHECK
 
+#ifdef OPERATOR_PLUS_CHEK
 	/*String str1 = "Hello";
-	str1 = str1;
-	cout << str1 << endl;*/
+str1 = str1;
+cout << str1 << endl;*/
 
 	String str1 = "Hello ";
 	String str2 = "World";
@@ -159,4 +152,22 @@ void main()
 	str1 += str2;
 	cout << delimiter << endl;
 	cout << str1 << endl;*/
+#endif // OPERATOR_PLUS_CHEK
+
+	String str1 (25); //Default constructor
+	str1.print();
+	String str2 = "Hello"; //Single-argument constructor (с одним параметром)
+	//cout << str2 << endl;
+	str2.print();
+	String str3("World"); //Single-argument constructor (с одним параметром)
+	cout << str3 << endl;
+	String str4(); //ОБЪЯВЛЯЕТСЯ ФУНКЦИЯ str4, КОТОРАЯ НИЧЕГО НЕ ПРИНИМАЕТ И 
+	               //ВОЗВРАЩАЕТ ОБЪЕКТ КЛАССА String, то есть не создается объект
+	String str5{}; //ЯВНЫЙ ВЫЗОВ КОНСТРУКТОРА ПО УМОЛЧАНИЮ
+	cout << str5 << endl;
+	String str6{ "Параметры в конструктор можно передавать в фигурных скобках" };
+	cout << str6 << endl;
+	String str7 = str6;
+	cout << str7 << endl;
+	cout << str2 + " " + str3 << endl;
 }
