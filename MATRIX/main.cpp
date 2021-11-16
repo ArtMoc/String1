@@ -33,15 +33,16 @@ public:
 	{
 		
 	}
-	Matrix(const Matrix& other):Matrix(other.rows, other.cols)
+	Matrix(const Matrix& other)//:Matrix(other.rows, other.cols)
 	{
-		for (int i = 0; i < rows; i++)
+		/*for (int i = 0; i < rows; i++)
 		{
 			for (int j = 0; j < cols; j++)
 			{
 				this->arr[i][j] = other.arr[i][j];
 			}
-		}
+		}*/
+		*this = other;
 		cout << "Copy_Constructor:\t" << this << endl;
 	}
 	~Matrix()
@@ -60,6 +61,7 @@ public:
 	//                               OPERATORS:
 	Matrix& operator=(const Matrix& other)
 	{
+		if (this == &other)return *this;
 		this->~Matrix();
 		this->rows = other.rows;
 		this->cols = other.cols;
@@ -108,8 +110,9 @@ void main()
 			A[i][j] = rand() % 100;
 		}
 	}
+	A = A;
 	A.print();
 	Matrix B;
-	B = A;
+	B = A; //Copy Assignment
 	B.print();
 }
