@@ -1,4 +1,4 @@
-//constructors_delegation_in_string
+ï»¿//constructors_delegation_in_string
 #pragma warning (disable:4326)
 #include <iostream>
 using namespace std;
@@ -10,8 +10,8 @@ String operator+(const String& left, const String& right);
 
 class String
 {
-	int size; //?????? ?????? ? ??????
-	char* str; //????? ?????? ? ???????????? ??????
+	int size; //Ã°Ã Ã§Ã¬Ã¥Ã° Ã±Ã²Ã°Ã®ÃªÃ¨ Ã¢ Ã¡Ã Ã©Ã²Ã Ãµ
+	char* str; //Ã Ã¤Ã°Ã¥Ã± Ã±Ã²Ã°Ã®ÃªÃ¨ Ã¢ Ã¤Ã¨Ã­Ã Ã¬Ã¨Ã·Ã¥Ã±ÃªÃ®Ã© Ã¯Ã Ã¬Ã¿Ã²Ã¨
 public:
 	int get_size()const
 	{
@@ -133,7 +133,7 @@ void main()
 	cout << str2 << endl;
 
 	String str3;
-	str3 = str2; //Shallow copy (ïîâåðõíîñòíîå êîïèðîâàíèå)
+	str3 = str2; //Shallow copy (Ð¿Ð¾Ð²ÐµÑ€Ñ…Ð½Ð¾ÑÑ‚Ð½Ð¾Ðµ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ)
 	cout << str3 << endl;
 #endif // CONSTRUCTORS_CHECK
 
@@ -156,16 +156,16 @@ cout << str1 << endl;*/
 
 	String str1 (25); //Default constructor
 	str1.print();
-	String str2 = "Hello"; //Single-argument constructor (ñ îäíèì ïàðàìåòðîì)
+	String str2 = "Hello"; //Single-argument constructor (Ñ Ð¾Ð´Ð½Ð¸Ð¼ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð¼)
 	//cout << str2 << endl;
 	str2.print();
-	String str3("World"); //Single-argument constructor (ñ îäíèì ïàðàìåòðîì)
+	String str3("World"); //Single-argument constructor (Ñ Ð¾Ð´Ð½Ð¸Ð¼ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð¼)
 	cout << str3 << endl;
-	String str4(); //ÎÁÚßÂËßÅÒÑß ÔÓÍÊÖÈß str4, ÊÎÒÎÐÀß ÍÈ×ÅÃÎ ÍÅ ÏÐÈÍÈÌÀÅÒ È 
-	               //ÂÎÇÂÐÀÙÀÅÒ ÎÁÚÅÊÒ ÊËÀÑÑÀ String, òî åñòü íå ñîçäàåòñÿ îáúåêò
-	String str5{}; //ßÂÍÛÉ ÂÛÇÎÂ ÊÎÍÑÒÐÓÊÒÎÐÀ ÏÎ ÓÌÎË×ÀÍÈÞ
+	String str4(); //ÐžÐ‘ÐªÐ¯Ð’Ð›Ð¯Ð•Ð¢Ð¡Ð¯ Ð¤Ð£ÐÐšÐ¦Ð˜Ð¯ str4, ÐšÐžÐ¢ÐžÐ ÐÐ¯ ÐÐ˜Ð§Ð•Ð“Ðž ÐÐ• ÐŸÐ Ð˜ÐÐ˜ÐœÐÐ•Ð¢ Ð˜ 
+	               //Ð’ÐžÐ—Ð’Ð ÐÐ©ÐÐ•Ð¢ ÐžÐ‘ÐªÐ•ÐšÐ¢ ÐšÐ›ÐÐ¡Ð¡Ð String, Ñ‚Ð¾ ÐµÑÑ‚ÑŒ Ð½Ðµ ÑÐ¾Ð·Ð´Ð°ÐµÑ‚ÑÑ Ð¾Ð±ÑŠÐµÐºÑ‚
+	String str5{}; //Ð¯Ð’ÐÐ«Ð™ Ð’Ð«Ð—ÐžÐ’ ÐšÐžÐÐ¡Ð¢Ð Ð£ÐšÐ¢ÐžÐ Ð ÐŸÐž Ð£ÐœÐžÐ›Ð§ÐÐÐ˜Ð®
 	cout << str5 << endl;
-	String str6{ "Ïàðàìåòðû â êîíñòðóêòîð ìîæíî ïåðåäàâàòü â ôèãóðíûõ ñêîáêàõ" };
+	String str6{ "ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¼Ð¾Ð¶Ð½Ð¾ Ð¿ÐµÑ€ÐµÐ´Ð°Ð²Ð°Ñ‚ÑŒ Ð² Ñ„Ð¸Ð³ÑƒÑ€Ð½Ñ‹Ñ… ÑÐºÐ¾Ð±ÐºÐ°Ñ…" };
 	cout << str6 << endl;
 	String str7 = str6;
 	cout << str7 << endl;
